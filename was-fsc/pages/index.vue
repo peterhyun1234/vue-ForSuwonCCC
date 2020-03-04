@@ -10,16 +10,16 @@
       >
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
   
-        <v-toolbar-title>Page title</v-toolbar-title>
+        <v-toolbar-title>수원 CCC</v-toolbar-title>
   
         <v-spacer></v-spacer>
   
-        <v-btn icon>
+        <v-btn icon to="/donation">
           <v-icon>mdi-heart</v-icon>
         </v-btn>
   
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
+        <v-btn icon to="/sendMessage">
+          <v-icon>mdi-email-send-outline</v-icon>
         </v-btn>
   
         <v-menu
@@ -150,5 +150,6 @@ export default {
   align-items: center;
   text-align: center;
 }
+
 </style>
 
