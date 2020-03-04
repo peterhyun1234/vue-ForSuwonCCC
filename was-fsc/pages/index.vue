@@ -1,15 +1,13 @@
 <template>
   <v-app id="inspire">
-    <div>
       <v-app-bar
         color="deep-purple accent-4"
         dense
         dark
-        hide-on-scroll
         collapse-on-scroll
       >
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-  
+        <v-app-bar-nav-icon @click="navdrawer = !navdrawer"></v-app-bar-nav-icon>
+
         <v-toolbar-title>수원 CCC</v-toolbar-title>
   
         <v-spacer></v-spacer>
@@ -43,7 +41,41 @@
           </v-list>
         </v-menu>
       </v-app-bar>
-    </div>
+
+      <v-navigation-drawer app v-model="navdrawer">
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="title">
+              수원 CCC
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              subtext
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+  
+        <v-divider></v-divider>
+  
+        <v-list
+          dense
+          nav
+        >
+          <v-list-item
+            v-for="item in items"
+            :key="item.title"
+            link
+          >
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+  
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+
     <div>
       <v-container fluid class="pa-0">
       <v-row align="center">
@@ -109,14 +141,7 @@
       class="indigo lighten-1 white--text text-center"
     >
       <v-card-text>
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-4 white--text"
-          icon
-        >
-          <v-icon size="24px">{{ icon }}</v-icon>
-        </v-btn>
+
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
@@ -138,7 +163,20 @@
 
 export default {
   components: {
-  }
+  },
+  data () {
+    return {
+      navdrawer: false,
+      items: [
+        { title: '브릿지 카드', icon: 'mdi-bridge' },
+        { title: '캠퍼스 별 기도제목', icon: 'mdi-image' },
+        { title: '대표단에게 건의', icon: 'mdi-email-send-outline' },
+        { title: '간사님에게 건의', icon: 'mdi-email-send' },
+        { title: 'About', icon: 'mdi-help-box' },
+      ],
+      right: null,
+    }
+  },
 }
 </script>
 
