@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    home page
+    home pagesadasd
   </v-app>
 </template>
 
