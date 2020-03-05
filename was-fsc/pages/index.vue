@@ -3,54 +3,52 @@
     <v-container grid-list-md>
       <v-layout row wrap>
         <v-card
-          elevation="24"
-          max-width="444"
+          elevation="20"
+          max-width="600"
           class="mx-auto"
         >
-          <v-system-bar lights-out></v-system-bar>
           <v-carousel
-            :continuous="false"
+            :continuous="true"
             :cycle="cycle"
             :show-arrows="false"
             hide-delimiter-background
             delimiter-icon="mdi-minus"
             height="300"
           >
-            <v-carousel-item
-              v-for="(slide, i) in slides"
-              :key="i"
-            >
-              <v-sheet
-                :color="colors[i]"
-                height="100%"
-                tile
-              >
-                <v-row
-                  class="fill-height"
-                  align="center"
-                  justify="center"
-                >
-                  <div class="display-3">{{ slide }} Slide</div>
-                </v-row>
-              </v-sheet>
-            </v-carousel-item>
+          <v-carousel-item
+            v-for="(item,i) in items"
+            :key="i"
+            :src="item.src"
+          ></v-carousel-item>
           </v-carousel>
           <v-list two-line>
             <v-list-item>
-              <v-list-item-avatar>
-                <v-img src="https://cdn.vuetifyjs.com/images/john.png"></v-img>
-              </v-list-item-avatar>
               <v-list-item-content>
-                <v-list-item-title>John Leider</v-list-item-title>
-                <v-list-item-subtitle>Author</v-list-item-subtitle>
+                <v-list-item-title>
+                  <v-chip
+                    class="ma-2"
+                    color="primary"
+                    outlined
+                    pill
+                  >
+                    User Account
+                    <v-icon right>mdi-account-outline</v-icon>
+                  </v-chip>
+                </v-list-item-title>
               </v-list-item-content>
-              <v-list-item-action>
-                <v-switch
-                  v-model="cycle"
-                  label="Cycle Slides"
-                  inset
-                ></v-switch>
-              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>
+                  <v-chip
+                    class="ma-2"
+                    color="primary"
+                    outlined
+                    pill
+                  >
+                    User Account
+                    <v-icon right>mdi-account-outline</v-icon>
+                  </v-chip>
+                </v-list-item-title>
+              </v-list-item-content>
             </v-list-item>
           </v-list>
         </v-card>
@@ -73,13 +71,22 @@ export default {
         'red lighten-2',
         'orange darken-1',
       ],
-      cycle: false,
-      slides: [
-        'First',
-        'Second',
-        'Third',
-        'Fourth',
-        'Fifth',
+      items: [
+        {
+          src: 'https://i.imgur.com/LHiaee2.png',
+        },
+        {
+          src: 'https://i.imgur.com/8j4BggT.png',
+        },
+        {
+          src: 'https://i.imgur.com/JK52Rzi.png',
+        },        
+        {
+          src: 'https://i.imgur.com/k8YmRbZ.png',
+        },
+        {
+          src: 'https://i.imgur.com/NdaiuTo.png',
+        },
       ],
     }
   },
