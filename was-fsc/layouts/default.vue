@@ -167,7 +167,6 @@ export default {
       footerItems: [
         { icon: 'mdi-instagram', href: 'https://www.instagram.com/suwon_ccc/'},
         { icon: 'mdi-github-circle' , href: 'https://github.com/peterhyun1234/vue-ForSuwonCCC'},
-        { icon: 'mdi-linkedin' , href: 'https://www.linkedin.com/in/hyunbin-jeon-196a2b19b/'},
         { icon: 'mdi-medium', href: 'https://medium.com/@peterhyun1234'},
         { icon: 'mdi-book-information-variant', href: 'https://ajouccc.netlify.com/about'},
       ],
