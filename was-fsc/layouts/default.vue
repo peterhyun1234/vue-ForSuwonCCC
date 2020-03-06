@@ -5,7 +5,7 @@
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="title">
-              수원 CCC
+              아주대 CCC
               <v-btn icon to="/">
                 <v-icon>mdi-home</v-icon>
               </v-btn>
@@ -43,7 +43,7 @@
       >
         <v-app-bar-nav-icon @click="navdrawer = !navdrawer"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>수원 CCC</v-toolbar-title>
+        <v-toolbar-title>아주대 CCC</v-toolbar-title>
   
         <v-spacer></v-spacer>
   
@@ -119,7 +119,8 @@ export default {
       navdrawer: false,
       items: [
         { title: '브릿지 카드', icon: 'mdi-bridge', to: '/bridge'},
-        { title: '캠퍼스 별 기도제목', icon: 'mdi-image' , to: '/bridge'},
+        { title: '아주대 기도제목', icon: 'mdi-sprout' , to: '/bridge'},
+        { title: '개인 기도제목', icon: 'mdi-sprout-outline' , to: '/bridge'},
         { title: '대표단에게 건의', icon: 'mdi-email-send-outline', to: '/bridge'},
         { title: '간사님에게 건의', icon: 'mdi-email-send', to: '/bridge'},
         { title: 'About', icon: 'mdi-help-box', to: '/bridge'},
