@@ -10,7 +10,7 @@
           >
             <v-carousel
               :continuous="true"
-              :cycle="cycle"
+              :cycle="true"
               :show-arrows="false"
               hide-delimiter-background
               delimiter-icon="mdi-minus"
