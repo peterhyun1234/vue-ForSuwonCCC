@@ -63,7 +63,7 @@
           >
             <v-carousel
               :continuous="true"
-              :cycle="cycle"
+              :cycle="true"
               :show-arrows="false"
               hide-delimiter-background
               delimiter-icon="mdi-minus"
@@ -85,7 +85,7 @@
                       outlined
                       pill
                     >
-                      브릿지 설명서 보기
+                      브릿지 설명
                       <v-icon right>mdi-folder-information-outline</v-icon>
                     </v-chip>
                   </v-list-item-title>
@@ -98,7 +98,7 @@
                       outlined
                       pill
                     >
-                      브릿지 시작하기
+                      브릿지 시작
                       <v-icon right>mdi-clock-start</v-icon>
                     </v-chip>
                   </v-list-item-title>
