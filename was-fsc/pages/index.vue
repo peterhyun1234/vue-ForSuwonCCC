@@ -2,56 +2,111 @@
   <v-app id="inspire">
     <v-container grid-list-md>
       <v-layout row wrap>
-        <v-card
-          elevation="20"
-          max-width="600"
-          class="mx-auto"
-        >
-          <v-carousel
-            :continuous="true"
-            :cycle="cycle"
-            :show-arrows="false"
-            hide-delimiter-background
-            delimiter-icon="mdi-minus"
-            height="300"
+        <v-flex xs12>
+          <v-card
+            elevation="20"
+            max-width="444"
+            class="mx-auto"
           >
-          <v-carousel-item
-            v-for="(item,i) in items"
-            :key="i"
-            :src="item.src"
-          ></v-carousel-item>
-          </v-carousel>
-          <v-list two-line>
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title>
-                  <v-chip
-                    class="ma-2"
-                    color="primary"
-                    outlined
-                    pill
-                  >
-                    User Account
-                    <v-icon right>mdi-account-outline</v-icon>
-                  </v-chip>
-                </v-list-item-title>
-              </v-list-item-content>
-              <v-list-item-content>
-                <v-list-item-title>
-                  <v-chip
-                    class="ma-2"
-                    color="primary"
-                    outlined
-                    pill
-                  >
-                    User Account
-                    <v-icon right>mdi-account-outline</v-icon>
-                  </v-chip>
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-card>
+            <v-carousel
+              :continuous="true"
+              :cycle="cycle"
+              :show-arrows="false"
+              hide-delimiter-background
+              delimiter-icon="mdi-minus"
+              height="300"
+            >
+            <v-carousel-item
+              v-for="(item,i) in items"
+              :key="i"
+              :src="item.src"
+            ></v-carousel-item>
+            </v-carousel>
+            <v-list two-line>
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>
+                    <v-chip
+                      class="ma-2"
+                      color="green"
+                      outlined
+                      pill
+                    >
+                      브릿지 설명
+                      <v-icon right>mdi-folder-information-outline</v-icon>
+                    </v-chip>
+                  </v-list-item-title>
+                </v-list-item-content>
+                <v-list-item-content>
+                  <v-list-item-title>
+                    <v-chip
+                      class="ma-2"
+                      color="primary"
+                      outlined
+                      pill
+                    >
+                      브릿지 시작
+                      <v-icon right>mdi-clock-start</v-icon>
+                    </v-chip>
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card>
+        </v-flex>
+        
+        <v-flex xs12>
+          <v-card
+            elevation="20"
+            max-width="444"
+            class="mx-auto"
+          >
+            <v-carousel
+              :continuous="true"
+              :cycle="cycle"
+              :show-arrows="false"
+              hide-delimiter-background
+              delimiter-icon="mdi-minus"
+              height="300"
+            >
+            <v-carousel-item
+              v-for="(item,i) in items"
+              :key="i"
+              :src="item.src"
+            ></v-carousel-item>
+            </v-carousel>
+            <v-list two-line>
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>
+                    <v-chip
+                      class="ma-2"
+                      color="green"
+                      outlined
+                      pill
+                    >
+                      브릿지 설명서 보기
+                      <v-icon right>mdi-folder-information-outline</v-icon>
+                    </v-chip>
+                  </v-list-item-title>
+                </v-list-item-content>
+                <v-list-item-content>
+                  <v-list-item-title>
+                    <v-chip
+                      class="ma-2"
+                      color="primary"
+                      outlined
+                      pill
+                    >
+                      브릿지 시작하기
+                      <v-icon right>mdi-clock-start</v-icon>
+                    </v-chip>
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+          </v-card>
+        </v-flex>
       </v-layout>
     </v-container>
   </v-app>
