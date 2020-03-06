@@ -1,6 +1,6 @@
 <template>
   <div>
-      <v-app id="inspire">
+    <v-app id="inspire">
       <v-navigation-drawer app v-model="navdrawer">
         <v-list-item>
           <v-list-item-content>
@@ -36,7 +36,7 @@
       </v-navigation-drawer>
 
       <v-app-bar
-        color="#0091EA"
+        color="blue"
         dense
         dark
         collapse-on-scroll
@@ -76,35 +76,64 @@
           </v-list>
         </v-menu>
       </v-app-bar>
-<div>
-  <nuxt/>
-</div>
-    <div>
-      <v-footer
-    dark
-    padless
-  >
-    <v-card
-      flat
-      tile
-      class="indigo lighten-1 white--text text-center"
-    >
-      <v-card-text>
+      <div>
+        <nuxt/>
+      </div>
+      <div>
+        <v-footer
+          dark
+          padless
+        >
+          <v-container grid-list-md text-xs-center fluid >
+            <v-layout row wrap>
+              <v-flex xs12>
+                <v-card
+                  color="#3d3d3d"
+                  flat
+                  >
 
-      </v-card-text>
+                  <v-card-text>
+                    <v-btn
+                      v-for="f_item in footerItems"
+                      :key="f_item.icon"
+                      :href="f_item.href"
+                      class="mx-4 white--text"
+                    >
+                      <v-icon size="24px">{{ f_item.icon }}</v-icon>
+                    </v-btn>
+                  </v-card-text>
+                  <v-card-text class="white--text pt-0">
+                    <p>평소에 제가 아주대에서 CCC활동을 하면서 불편했던 부분들을 해소하고 싶다는 마음으로 개발하게 됐습니다.</p>
+                    <p>
+                      <span>개인적으로 공부하면서 만든 웹페이지라서 부족한 부분이 많이 있습니다. 개선해야 할 부분이나 추가적으로 필요한 기능이 있다면 </span>
+                      <strong><span style="color: #919191;">개발자에게 건의사항</span></strong>
+                      <span>기능을 이용해주세요!</span>
+                    </p>
+                    <p>
+                      <span>소스코드는 제 </span>
+                      <strong><span style="color: #919191;">Github repository</span></strong>
+                      <span>에 올려뒀고, 개발 관련 지식이나 도움이 필요하신 분들은 제 이메일로 연락주길 바랍니다 :D</span>
+                    </p>
+                  </v-card-text>
 
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </v-card-text>
+                  <v-divider></v-divider>
 
-      <v-divider></v-divider>
-
-      <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-card-text>
-    </v-card>
-  </v-footer>
-</div>
+                  <v-card-text class="white--text">
+                    <p>
+                      <span>Released under </span>
+                      <strong><span style="color: #919191;">MIT License</span></strong>
+                    </p>
+                    <p>
+                      <span>Server support from </span>
+                      <strong><span style="color: #919191;">Netlify</span></strong>
+                    </p>
+                  </v-card-text>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-footer>
+      </div>
     </v-app>
   </div>
 </template>
@@ -124,6 +153,13 @@ export default {
         { title: '대표단에게 건의', icon: 'mdi-email-send-outline', to: '/bridge'},
         { title: '간사님에게 건의', icon: 'mdi-email-send', to: '/bridge'},
         { title: 'About', icon: 'mdi-help-box', to: '/bridge'},
+      ],
+      footerItems: [
+        { icon: 'mdi-instagram', href: 'https://www.instagram.com/suwon_ccc/'},
+        { icon: 'mdi-github-circle' , href: 'https://github.com/peterhyun1234/vue-ForSuwonCCC'},
+        { icon: 'mdi-linkedin' , href: 'https://www.linkedin.com/in/hyunbin-jeon-196a2b19b/'},
+        { icon: 'mdi-medium', href: 'https://medium.com/@peterhyun1234'},
+        { icon: 'mdi-book-information-variant', href: 'https://ajouccc.netlify.com/about'},
       ],
     }
   },
