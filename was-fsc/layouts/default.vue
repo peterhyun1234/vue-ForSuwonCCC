@@ -105,12 +105,20 @@
                   <p>평소에 제가 아주대에서 CCC활동을 하면서 불편했던 부분들을 해소하고 싶다는 마음으로 개발하게 됐습니다.</p>
                   <p>
                     <span>개인적으로 공부하면서 만든 웹페이지라서 부족한 부분이 많이 있습니다. 개선해야 할 부분이나 추가적으로 필요한 기능이 있다면 </span>
-                    <strong><span style="color: #919191; font-size: large;">개발자에게 건의사항</span></strong>
+                    <a href="/about" style="text-decoration:none">
+                      <strong>
+                        <span style="color: #919191;">개발자에게 건의사항</span>
+                      </strong>
+                    </a>
                     <span>기능을 이용해주세요!</span>
                   </p>
                   <p>
                     <span>소스코드는 제 </span>
-                    <strong><span style="color: #919191; font-size: large;">Github repository</span></strong>
+                    <a href="https://github.com/peterhyun1234/vue-ForSuwonCCC" style="text-decoration:none">
+                      <strong>
+                        <span style="color: #919191;">Github repository</span>
+                      </strong>
+                    </a>
                     <span>에 올려뒀고, 개발 관련 지식이나 도움이 필요하신 분들은 제 이메일로 연락주길 바랍니다 :D</span>
                   </p>
                 </v-card-text>
@@ -120,11 +128,15 @@
                 <v-card-text class="white--text">
                   <p style="font-size: large;">
                       <span>Released under </span>
-                      <strong><span style="color: #919191;">MIT License</span></strong>
+                      <a href="https://opensource.org/licenses/MIT" style="text-decoration:none">
+                        <strong><span style="color: #919191;">MIT License</span></strong>
+                      </a>
                   </p>
                   <p style="font-size: large;">
                       <span>Server support from </span>
-                      <strong><span style="color: #919191;">Netlify</span></strong>
+                      <a href="https://www.netlify.com/" style="text-decoration:none">
+                        <strong><span style="color: #919191;">Netlify</span></strong>
+                      </a>
                   </p>
                 </v-card-text>
               </v-card>
