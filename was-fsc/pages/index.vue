@@ -3,6 +3,10 @@
     <v-container grid-list-md>
       <v-layout row wrap>
         <v-flex xs12>
+          <v-img src="https://picsum.photos/510/300?random" aspect-ratio="1.7"></v-img>
+        </v-flex>
+
+        <v-flex xs12>
           <v-card
             elevation="20"
             max-width="444"
