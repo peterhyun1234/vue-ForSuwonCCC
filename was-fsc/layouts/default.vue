@@ -63,7 +63,7 @@
           dark
           padless
         >
-          <v-layout row wrap >
+          <v-layout row wrap fill-height>
             <v-flex xs12 class="text-center">
               <v-card
                 color="#3d3d3d"
@@ -137,11 +137,13 @@ export default {
       navdrawer: false,
       items: [
         { title: '브릿지 카드', icon: 'mdi-bridge', to: '/bridge'},
+        { title: '사랑의 언어 테스트', icon: 'mdi-account-heart-outline', to: '/bridge'},
+        { title: 'CCC 정보', icon: 'mdi-folder-information-outline', to: '/bridge'},
         { title: '아주대 기도제목', icon: 'mdi-sprout' , to: '/bridge'},
         { title: '개인 기도제목', icon: 'mdi-sprout-outline' , to: '/bridge'},
         { title: '대표단에게 건의', icon: 'mdi-email-send-outline', to: '/bridge'},
         { title: '간사님에게 건의', icon: 'mdi-email-send', to: '/bridge'},
-        { title: 'About', icon: 'mdi-help-box', to: '/bridge'},
+        { title: 'About', icon: 'mdi-help-circle-outline', to: '/bridge'},
       ],
       footerItems: [
         { icon: 'mdi-instagram', href: 'https://www.instagram.com/suwon_ccc/'},
