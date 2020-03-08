@@ -1,7 +1,8 @@
 <template>
   <v-app id="inspire">
-    <v-container grid-list-md>
-      <v-layout row wrap>
+    <v-container grid-list-xl>
+      <v-layout row wrap
+        class="mx-0">
         <v-flex xs12>
           <v-img src="https://picsum.photos/510/300?random" aspect-ratio="1.7"></v-img>
         </v-flex>

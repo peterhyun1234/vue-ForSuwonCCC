@@ -76,7 +76,7 @@
                     v-for="f_item in footerItems"
                     :key="f_item.icon"
                     :href="f_item.href"
-                    class="mx-3 white--text"
+                    class="mx-2 white--text"
                   >
                     <v-icon size="24px">{{ f_item.icon }}</v-icon>
                   </v-btn>
@@ -147,7 +147,7 @@ export default {
         { title: 'About', icon: 'mdi-help-circle-outline', to: '/bridge'},
       ],
       footerItems: [
-        { icon: 'mdi-instagram', href: 'https://www.instagram.com/suwon_ccc/'},
+        { icon: 'mdi-instagram', href: 'https://www.instagram.com/ajou_ccc/'},
         { icon: 'mdi-github-circle' , href: 'https://github.com/peterhyun1234/vue-ForSuwonCCC'},
         { icon: 'mdi-medium', href: 'https://medium.com/@peterhyun1234'},
         { icon: 'mdi-book-information-variant', href: 'https://ajouccc.netlify.com/about'},
