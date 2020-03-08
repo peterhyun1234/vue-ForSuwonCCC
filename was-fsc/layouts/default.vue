@@ -63,7 +63,8 @@
           dark
           padless
         >
-          <v-layout row wrap fill-height>
+          <v-layout row wrap 
+            class="mx-0">
             <v-flex xs12 class="text-center">
               <v-card
                 color="#3d3d3d"
