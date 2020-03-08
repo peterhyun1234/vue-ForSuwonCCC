@@ -2,13 +2,11 @@
   <div>
     <v-app id="inspire">
       <v-navigation-drawer app v-model="navdrawer">
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title class="title">
-              아주대 CCC
-              <v-btn icon to="/">
-                <v-icon>mdi-home</v-icon>
-              </v-btn>
+        <v-list-item class="ma-0 pa-0">
+          <v-list-item-content class="ma-0 pa-0">
+            <v-list-item-title class="title" >
+              <v-img :aspect-ratio="16/9" src="https://i.imgur.com/eF2jAHp.png">
+              </v-img>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -20,7 +18,21 @@
           nav
         >
           <v-list-item
-            v-for="item in items"
+            v-for="item in drawerItems"
+            :key="item.title"
+            :to="item.to"
+          >
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+  
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-divider></v-divider>
+          <v-list-item
+            v-for="item in drawerEtcItems"
             :key="item.title"
             :to="item.to"
           >
@@ -43,7 +55,15 @@
       >
         <v-app-bar-nav-icon @click="navdrawer = !navdrawer"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>아주대 CCC</v-toolbar-title>
+        <v-toolbar-title 
+          class="pa-0">
+          <v-btn 
+            text
+            to="/"
+          >
+            아주대 CCC
+          </v-btn>
+        </v-toolbar-title>
   
         <v-spacer></v-spacer>
   
@@ -136,12 +156,14 @@ export default {
   data () {
     return {
       navdrawer: false,
-      items: [
+      drawerItems: [
         { title: '브릿지 카드', icon: 'mdi-bridge', to: '/bridge'},
         { title: '사랑의 언어 테스트', icon: 'mdi-account-heart-outline', to: '/bridge'},
         { title: 'CCC 정보', icon: 'mdi-folder-information-outline', to: '/bridge'},
         { title: '아주대 기도제목', icon: 'mdi-sprout' , to: '/bridge'},
         { title: '개인 기도제목', icon: 'mdi-sprout-outline' , to: '/bridge'},
+      ],
+      drawerEtcItems: [
         { title: '대표단에게 건의', icon: 'mdi-email-send-outline', to: '/bridge'},
         { title: '간사님에게 건의', icon: 'mdi-email-send', to: '/bridge'},
         { title: 'About', icon: 'mdi-help-circle-outline', to: '/bridge'},
