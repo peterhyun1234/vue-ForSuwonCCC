@@ -6,6 +6,12 @@
           <v-list-item-content class="ma-0 pa-0">
             <v-list-item-title class="title" >
               <v-img :aspect-ratio="16/9" src="https://i.imgur.com/eF2jAHp.png">
+              <v-icon 
+                x-large
+                class= "pa-1"
+                color="white "
+                @click="navdrawer = !navdrawer"
+              >mdi-chevron-left</v-icon>
               </v-img>
             </v-list-item-title>
           </v-list-item-content>
@@ -96,7 +102,7 @@
                     v-for="f_item in footerItems"
                     :key="f_item.icon"
                     :href="f_item.href"
-                    class="mx-2 white--text"
+                    class="mx-1 white--text"
                   >
                     <v-icon size="24px">{{ f_item.icon }}</v-icon>
                   </v-btn>
@@ -176,6 +182,13 @@ export default {
       ],
     }
   },
+  created(){
+    console.log('created navdrawer: ' + this.navdrawer)
+  },
+  mounted()
+  {
+    console.log('mounted navdrawer: ' + this.navdrawer)
+  }
 }
 </script>
 

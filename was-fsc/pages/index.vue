@@ -7,121 +7,127 @@
           <v-img 
             src="https://i.imgur.com/P9eD47N.png" 
             aspect-ratio="1.14"
+            max-height="700"
+            contain
           ></v-img>
-        </v-flex>
-
-        <v-flex xs12>
-          <v-card
-            elevation="10"
-            max-width="444"
-            class="mx-auto"
-          >
-            <v-carousel
-              :continuous="true"
-              :cycle="true"
-              :show-arrows="false"
-              hide-delimiter-background
-              delimiter-icon="mdi-minus"
-              height="300"
-            >
-            <v-carousel-item
-              v-for="(item,i) in items"
-              :key="i"
-              :src="item.src"
-            ></v-carousel-item>
-            </v-carousel>
-            <v-list two-line>
-              <v-list-item>
-                <v-list-item-content class="ma-0 pa-0">
-                  <v-list-item-title>
-                    <v-chip
-                      class="ma-0"
-                      color="green"
-                      outlined
-                      pill
-                      
-                    >
-                      브릿지 설명
-                      <v-icon right>mdi-folder-information-outline</v-icon>
-                    </v-chip>
-                  </v-list-item-title>
-                </v-list-item-content>
-                <v-list-item-content class="ma-0 pa-0">
-                  <v-list-item-title>
-                    <v-chip
-                      class="ma-0"
-                      color="primary"
-                      outlined
-                      pill
-                    >
-                      브릿지 시작
-                      <v-icon right>mdi-clock-start</v-icon>
-                    </v-chip>
-                  </v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list>
-          </v-card>
-        </v-flex>
-        
-        <v-flex xs12>
-          <v-card
-            elevation="10"
-            max-width="444"
-            class="mx-auto"
-          >
-            <v-carousel
-              :continuous="true"
-              :cycle="true"
-              :show-arrows="false"
-              hide-delimiter-background
-              delimiter-icon="mdi-minus"
-              height="300"
-            >
-            <v-carousel-item
-              v-for="(item,i) in items"
-              :key="i"
-              :src="item.src"
-            ></v-carousel-item>
-            </v-carousel>
-            <v-list two-line>
-              <v-list-item>
-                <v-list-item-content class="ma-0 pa-0">
-                  <v-list-item-title>
-                    <v-chip
-                      class="ma-0"
-                      color="green"
-                      outlined
-                      pill
-                    >
-                      사랑의 언어란?
-                      <v-icon right>mdi-folder-information-outline</v-icon>
-                    </v-chip>
-                  </v-list-item-title>
-                </v-list-item-content>
-                <v-list-item-content class="ma-0 pa-0">
-                  <v-list-item-title>
-                    <v-chip
-                      class="ma-0"
-                      color="primary"
-                      outlined
-                      pill
-                    >
-                      테스트 시작
-                      <v-icon right>mdi-clock-start</v-icon>
-                    </v-chip>
-                  </v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list>
-          </v-card>
         </v-flex>
 
         <v-card
           class="pa-4 ma-3"
           outlined
         >
-          <v-layout row>
+          <v-layout 
+            row
+            align-center 
+            justify-center
+          >
+            <v-flex xs12 sm6 md4>
+              <p>CCC 정보</p>
+              <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
+            </v-flex>
+            <v-flex xs12 sm6 md4>
+              <iframe 
+                width="560" height="200" 
+                src="https://www.youtube.com/embed/kbs37nqO7G4" 
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+                style="width: 100%; margin-left:auto; margin-right:auto;"
+              ></iframe>
+            </v-flex>
+          </v-layout>
+        </v-card>
+
+        <v-card
+          class="pa-4 ma-3"
+          outlined
+        >
+          <v-layout 
+            row
+            align-center 
+            justify-center
+          >
+            <v-flex xs12 sm6 md6>
+              <v-card
+                elevation="10"
+                max-width="444"
+                class="mx-auto"
+              >
+                <v-carousel
+                  :continuous="true"
+                  :cycle="true"
+                  :show-arrows-on-hover="true"
+                  hide-delimiter-background
+                  delimiter-icon="mdi-minus"
+                  height="300"
+                >
+                <v-carousel-item
+                  v-for="(item,i) in items"
+                  :key="i"
+                  :src="item.src"
+                ></v-carousel-item>
+                </v-carousel>
+              </v-card>
+            </v-flex>
+            <v-flex xs12 sm6 md6>
+              <p>브릿지 카드</p>
+                질문을 통해 서로를 알아가도록 돕는 카드입니다.
+                처음 만난 사람과 대화를 이어가기 어려워하는 
+                요즘 세대들이 일상의 소소한 질문부터 깊은 영적인 
+                대화까지 나눌 수 있도록 만들어줍니다.
+                각기 다른 49장의 질문카드+ 설명서 1장으로 
+                구성되어 있습니다.
+            </v-flex>
+          </v-layout>
+        </v-card>
+
+        <v-card
+          class="pa-4 ma-3"
+          outlined
+        >
+          <v-layout 
+            row
+            align-center 
+            justify-center
+          >
+            <v-flex xs12 sm6 md6>
+              <p>사랑의 언어 테스트</p>
+              <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
+            </v-flex>
+            <v-flex xs12 sm6 md6>
+              <v-card
+                elevation="10"
+                max-width="444"
+                class="mx-auto"
+              >
+                <v-carousel
+                  :continuous="true"
+                  :cycle="true"
+                  :show-arrows-on-hover="true"
+                  hide-delimiter-background
+                  delimiter-icon="mdi-minus"
+                  height="300"
+                >
+                <v-carousel-item
+                  v-for="(item,i) in items"
+                  :key="i"
+                  :src="item.src"
+                ></v-carousel-item>
+                </v-carousel>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-card>
+
+        <v-card
+          class="pa-4 ma-3"
+          outlined
+        >
+          <v-layout 
+            row
+            align-center 
+            justify-center
+          >
             <v-flex xs12 sm6 md4>
               <p>CCC 정보</p>
               <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
@@ -132,6 +138,30 @@
             </v-flex>
             <v-flex xs12 sm6 md4>
               <p>캠퍼스 리더십에게 건의</p>
+              <p>Flutter’s widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts, and your Flutter code is compiled to native ARM machine code using Dart's native compilers. Thus Flutter gives you full native performance on both iOS and Android.</p>
+            </v-flex>
+          </v-layout>
+        </v-card>
+
+        <v-card
+          class="pa-4 mt-3 mx-3 mb-8"
+          outlined
+        >
+          <v-layout 
+            row
+            align-center 
+            justify-center
+          >
+            <v-flex xs12 sm6 md4>
+              <p>아주대 CCC 인스타 그램</p>
+              <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
+            </v-flex>
+            <v-flex xs12 sm6 md4>
+              <p>순장노트 앱 다운로드</p>
+              <p>Quickly ship features with a focus on native end-user experiences. Layered architecture allows for full customization, which results in incredibly fast rendering and expressive and flexible designs.</p>
+            </v-flex>
+            <v-flex xs12 sm6 md4>
+              <p>Gateway 앱 다운로드</p>
               <p>Flutter’s widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts, and your Flutter code is compiled to native ARM machine code using Dart's native compilers. Thus Flutter gives you full native performance on both iOS and Android.</p>
             </v-flex>
           </v-layout>
@@ -157,19 +187,19 @@ export default {
       ],
       items: [
         {
-          src: 'https://i.imgur.com/LHiaee2.png',
+          src: 'https://i.imgur.com/V0Pggmc.png',
         },
         {
-          src: 'https://i.imgur.com/8j4BggT.png',
+          src: 'https://i.imgur.com/4pgyWuV.png',
         },
         {
-          src: 'https://i.imgur.com/JK52Rzi.png',
+          src: 'https://i.imgur.com/XjOcZDE.png',
         },        
         {
-          src: 'https://i.imgur.com/k8YmRbZ.png',
+          src: 'https://i.imgur.com/O7qf6ZY.png',
         },
         {
-          src: 'https://i.imgur.com/NdaiuTo.png',
+          src: 'https://i.imgur.com/slW2DVU.png',
         },
       ],
     }
