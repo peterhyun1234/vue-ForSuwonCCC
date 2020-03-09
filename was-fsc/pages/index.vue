@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-container grid-list-xl >
+    <v-container grid-list-xl fluid>
       <v-layout row wrap
         class="mx-0">
         <v-flex xs12 px-0>
@@ -22,10 +22,6 @@
             justify-center
           >
             <v-flex xs12 sm6 md4>
-              <p>CCC 정보</p>
-              <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
-            </v-flex>
-            <v-flex xs12 sm6 md4>
               <iframe 
                 width="560" height="200" 
                 src="https://www.youtube.com/embed/kbs37nqO7G4" 
@@ -34,6 +30,11 @@
                 allowfullscreen
                 style="width: 100%; margin-left:auto; margin-right:auto;"
               ></iframe>
+            </v-flex>
+            
+            <v-flex xs12 sm6 md4>
+              <p>CCC 정보</p>
+              <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
             </v-flex>
           </v-layout>
         </v-card>
@@ -50,7 +51,7 @@
             <v-flex xs12 sm6 md6>
               <v-card
                 elevation="10"
-                max-width="444"
+                max-width="300"
                 class="mx-auto"
               >
                 <v-carousel
@@ -59,10 +60,10 @@
                   :show-arrows-on-hover="true"
                   hide-delimiter-background
                   delimiter-icon="mdi-minus"
-                  height="300"
+                  height="245"
                 >
                 <v-carousel-item
-                  v-for="(item,i) in items"
+                  v-for="(item,i) in bridgeItems"
                   :key="i"
                   :src="item.src"
                 ></v-carousel-item>
@@ -97,7 +98,7 @@
             <v-flex xs12 sm6 md6>
               <v-card
                 elevation="10"
-                max-width="444"
+                max-width="300"
                 class="mx-auto"
               >
                 <v-carousel
@@ -106,10 +107,10 @@
                   :show-arrows-on-hover="true"
                   hide-delimiter-background
                   delimiter-icon="mdi-minus"
-                  height="300"
+                  height="245"
                 >
                 <v-carousel-item
-                  v-for="(item,i) in items"
+                  v-for="(item,i) in bridgeItems"
                   :key="i"
                   :src="item.src"
                 ></v-carousel-item>
@@ -149,21 +150,61 @@
         >
           <v-layout 
             row
-            align-center 
-            justify-center
           >
-            <v-flex xs12 sm6 md4>
-              <p>아주대 CCC 인스타 그램</p>
-              <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
+            
+            <v-flex
+              xs12 sm6 md4
+              v-for="(item,i) in otherAppsItems"
+              :key="i"
+            >
+              <v-card>
+
+                <v-list-item three-line>
+
+                  <v-list-item-avatar
+                    class="ma-1 pa-0"
+                    size="80"
+                    tile
+                  >
+                   <v-img :src="item.src"></v-img> 
+                  </v-list-item-avatar>
+
+                  <v-list-item-content>
+                    <v-list-item-title class=" mb-1">{{item.title}}</v-list-item-title>
+
+                    <v-list-item-subtitle v-if="item.android">
+                      <v-btn 
+                        icon 
+                        :href="item.android"
+                      >
+                        <v-icon>mdi-android</v-icon>
+                      </v-btn>
+                      <v-btn 
+                        icon 
+                        :href="item.ios"
+                      >
+                        <v-icon>mdi-apple</v-icon>
+                      </v-btn>
+
+                    </v-list-item-subtitle>
+                    
+                    <v-list-item-subtitle v-else>
+                      <v-btn 
+                        icon 
+                        :href="item.href"
+                      >
+                        <v-icon>mdi-instagram</v-icon>
+                        바로가기
+                      </v-btn>
+
+                    </v-list-item-subtitle>
+                  </v-list-item-content>
+
+                </v-list-item>
+
+              </v-card>
             </v-flex>
-            <v-flex xs12 sm6 md4>
-              <p>순장노트 앱 다운로드</p>
-              <p>Quickly ship features with a focus on native end-user experiences. Layered architecture allows for full customization, which results in incredibly fast rendering and expressive and flexible designs.</p>
-            </v-flex>
-            <v-flex xs12 sm6 md4>
-              <p>Gateway 앱 다운로드</p>
-              <p>Flutter’s widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts, and your Flutter code is compiled to native ARM machine code using Dart's native compilers. Thus Flutter gives you full native performance on both iOS and Android.</p>
-            </v-flex>
+
           </v-layout>
         </v-card>
       </v-layout>
@@ -185,7 +226,7 @@ export default {
         'red lighten-2',
         'orange darken-1',
       ],
-      items: [
+      bridgeItems: [
         {
           src: 'https://i.imgur.com/V0Pggmc.png',
         },
@@ -201,6 +242,25 @@ export default {
         {
           src: 'https://i.imgur.com/slW2DVU.png',
         },
+      ],
+      otherAppsItems: [
+        {
+          src: 'https://i.imgur.com/lQFjIgH.png', 
+          title: "순장노트 다운로드", 
+          android: "https://play.google.com/store/apps/details?id=org.kccc.sj", 
+          ios: "itms-services://?action=download-manifest&url=https://dl.dropboxusercontent.com/s/ylream78zwpf0qa/soonjang_note.plist",
+        },
+        {
+          src: 'https://i.imgur.com/3KpYGE0.png', 
+          title: "Gateway 다운로드", 
+          android: "https://play.google.com/store/apps/details?id=org.kccc.gateway", 
+          ios: "https://itunes.apple.com/kr/app/gateway/id1164352459?mt=8", 
+        },
+        {
+          src: 'https://i.imgur.com/78KTHI1.png', 
+          title: "아주대CCC 인스타그램", 
+          href: "https://www.instagram.com/ajou_ccc/", 
+        },        
       ],
     }
   },
