@@ -1,10 +1,13 @@
 <template>
   <v-app id="inspire">
-    <v-container grid-list-xl>
+    <v-container grid-list-xl >
       <v-layout row wrap
         class="mx-0">
-        <v-flex xs12>
-          <v-img src="https://i.imgur.com/ChYZWha.png" aspect-ratio="1.14"></v-img>
+        <v-flex xs12 px-0>
+          <v-img 
+            src="https://i.imgur.com/P9eD47N.png" 
+            aspect-ratio="1.14"
+          ></v-img>
         </v-flex>
 
         <v-flex xs12>
