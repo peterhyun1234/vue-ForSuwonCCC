@@ -1,24 +1,20 @@
 <template>
-    <v-app id="inspire">
-        Donation page
-    </v-app>
+  <v-app id="inspire">
+    <v-container grid-list-xl>
+      donation page
+    </v-container>
+  </v-app>
 </template>
 
 <script>
 
 export default {
   components: {
-  }
+  },
+  data () {
+    return {
+    }
+  },
 }
 </script>
-
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-</style>
 

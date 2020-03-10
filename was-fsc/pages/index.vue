@@ -1,19 +1,23 @@
 <template>
   <v-app id="inspire">
-    <v-container grid-list-xl fluid>
-      <v-layout row wrap
-        class="mx-0">
+    <v-container grid-list-xl>
+      <v-layout 
+        align-center 
+        justify-center
+        row 
+        wrap
+      >
         <v-flex xs12 px-0>
           <v-img 
-            src="https://i.imgur.com/P9eD47N.png" 
-            aspect-ratio="1.14"
+            src="https://i.imgur.com/pqKHHID.png" 
+            aspect-ratio="1.77"
             max-height="700"
             contain
           ></v-img>
         </v-flex>
 
         <v-card
-          class="pa-4 ma-3"
+          class="pa-4 ma-3 text-center"
           outlined
         >
           <v-layout 
@@ -33,14 +37,14 @@
             </v-flex>
             
             <v-flex xs12 sm6 md4>
-              <p>CCC 정보</p>
+              <p>CCC 환영</p>
               <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
             </v-flex>
           </v-layout>
         </v-card>
 
         <v-card
-          class="pa-4 ma-3"
+          class="pa-4 ma-3 text-center"
           outlined
         >
           <v-layout 
@@ -83,7 +87,7 @@
         </v-card>
 
         <v-card
-          class="pa-4 ma-3"
+          class="pa-4 ma-3 text-center"
           outlined
         >
           <v-layout 
@@ -121,8 +125,9 @@
         </v-card>
 
         <v-card
-          class="pa-4 ma-3"
+          class="pa-4 ma-3 text-center"
           outlined
+          
         >
           <v-layout 
             row
@@ -130,8 +135,32 @@
             justify-center
           >
             <v-flex xs12 sm6 md4>
-              <p>CCC 정보</p>
-              <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
+              <v-card-text>
+                <v-avatar 
+                  color="#FFE0B2" 
+                  size="50"
+                  >
+                  <v-icon 
+                    color="#FFA726"
+                    > mdi-folder-information-outline</v-icon>
+                </v-avatar>
+                <p class="display-1 text--primary">
+                  CCC 정보
+                </p>
+                <p>adjective</p>
+                <div class="text--primary">
+                  well meaning and kindly.<br>
+                  "a benevolent smile"
+                </div>
+              </v-card-text>
+              <v-card-text>
+                <v-btn
+                  text
+                  color="deep-purple accent-4"
+                >
+                  <strong>더 알아보기</strong>
+                </v-btn>
+              </v-card-text>
             </v-flex>
             <v-flex xs12 sm6 md4>
               <p>기도제목 공유</p>
@@ -159,7 +188,8 @@
             >
               <v-card>
 
-                <v-list-item three-line>
+                <v-list-item 
+                  three-line>
 
                   <v-list-item-avatar
                     class="ma-1 pa-0"
@@ -169,10 +199,13 @@
                    <v-img :src="item.src"></v-img> 
                   </v-list-item-avatar>
 
-                  <v-list-item-content>
+                  <v-list-item-content
+                    class="text-center"
+                  >
                     <v-list-item-title class=" mb-1">{{item.title}}</v-list-item-title>
 
-                    <v-list-item-subtitle v-if="item.android">
+                    <v-list-item-subtitle 
+                      v-if="item.android">
                       <v-btn 
                         icon 
                         :href="item.android"
@@ -266,15 +299,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-</style>
-
