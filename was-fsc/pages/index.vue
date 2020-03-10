@@ -7,7 +7,9 @@
         row 
         wrap
       >
-        <v-flex xs12 px-0>
+        <v-flex 
+          xs12 px-0 
+          v-if="!windowSize.mobile">
           <v-img 
             src="https://i.imgur.com/pqKHHID.png" 
             aspect-ratio="1.77"
@@ -15,6 +17,18 @@
             contain
           ></v-img>
         </v-flex>
+
+        <v-flex 
+          xs12 px-0 
+          v-else>
+          <v-img 
+            src="https://i.imgur.com/P9eD47N.png" 
+            aspect-ratio="1.14"
+            max-height="700"
+            contain
+          ></v-img>
+        </v-flex>
+
 
         <v-card
           class="pa-4 ma-3 text-center"
@@ -37,14 +51,27 @@
             </v-flex>
             
             <v-flex xs12 sm6 md4>
-              <p>CCC 환영</p>
-              <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
+              <v-card-text>
+                <p class="headline text--primary mt-3">
+                  아주대 CCC 웹페이지
+                </p>
+                <p class="subheading text--primary mt-3">
+                  아주대 CCC에 오신 여러분을 하나님의 이름으로 축복하고, 환영합니다 :D
+                  하나님은 당신을 사랑하시며 당신을 위한 놀라운 계획을 가지고 계십니다!
+                </p>
+                <v-btn
+                  text
+                  color="deep-purple accent-4"
+                >
+                  <strong>다른 영상 보기</strong>
+                </v-btn>
+              </v-card-text>
             </v-flex>
           </v-layout>
         </v-card>
 
         <v-card
-          class="pa-4 ma-3 text-center"
+          class="pa-4 ma-3 text-left"
           outlined
         >
           <v-layout 
@@ -75,29 +102,62 @@
               </v-card>
             </v-flex>
             <v-flex xs12 sm6 md6>
-              <p>브릿지 카드</p>
-                질문을 통해 서로를 알아가도록 돕는 카드입니다.
-                처음 만난 사람과 대화를 이어가기 어려워하는 
-                요즘 세대들이 일상의 소소한 질문부터 깊은 영적인 
-                대화까지 나눌 수 있도록 만들어줍니다.
-                각기 다른 49장의 질문카드+ 설명서 1장으로 
-                구성되어 있습니다.
+              <v-card-text>
+                <v-avatar 
+                  color="#FFE0B2" 
+                  size="50"
+                  >
+                  <v-icon 
+                    color="#FFA726"
+                    > mdi-bridge</v-icon>
+                </v-avatar>
+                <p class="headline text--primary mt-3">
+                  브릿지 카드
+                </p>
+                <p class="subheading text--primary mt-3">
+                  브릿지 카드에 대한 설명dddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                <v-btn
+                  text
+                  color="deep-purple accent-4"
+                >
+                  <strong>더 알아보기</strong>
+                </v-btn>
+              </v-card-text>
             </v-flex>
           </v-layout>
         </v-card>
 
         <v-card
-          class="pa-4 ma-3 text-center"
+          class="pa-4 ma-3 text-right"
           outlined
         >
           <v-layout 
             row
             align-center 
-            justify-center
+            justify-right
           >
             <v-flex xs12 sm6 md6>
-              <p>사랑의 언어 테스트</p>
-              <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
+              <v-card-text>
+                <v-avatar 
+                  color="#FFE0B2" 
+                  size="50"
+                  >
+                  <v-icon 
+                    color="#FFA726"
+                    > mdi-account-heart-outline</v-icon>
+                </v-avatar>
+                <p class="headline text--primary mt-3">
+                  사랑의 언어
+                </p>
+                <p class="subheading text--primary mt-3">
+                  사랑의 언어에 대한 설명asdasssssssssssssssssss</p>
+                <v-btn
+                  text
+                  color="deep-purple accent-4"
+                >
+                  <strong>더 알아보기</strong>
+                </v-btn>
+              </v-card-text>
             </v-flex>
             <v-flex xs12 sm6 md6>
               <v-card
@@ -127,7 +187,6 @@
         <v-card
           class="pa-4 ma-3 text-center"
           outlined
-          
         >
           <v-layout 
             row
@@ -144,16 +203,14 @@
                     color="#FFA726"
                     > mdi-folder-information-outline</v-icon>
                 </v-avatar>
-                <p class="display-1 text--primary">
+                <p class="headline text--primary ma-5">
                   CCC 정보
                 </p>
-                <p>adjective</p>
-                <div class="text--primary">
-                  well meaning and kindly.<br>
-                  "a benevolent smile"
-                </div>
-              </v-card-text>
-              <v-card-text>
+                <p class="subheading text--primary ma-3">
+                  CCC는 'Movements Everywhere'라는 비전을 가지고 
+                  성령의 능력으로 사람들에게 그리스도를 전하고 믿음을 훈련시키고, 
+                  이들이 다른 사람들을 전도하고 제자화 할 수 있도록 파송하여, 
+                  지상 명령을 성취하도록 돕는 단체입니다.</p>
                 <v-btn
                   text
                   color="deep-purple accent-4"
@@ -163,12 +220,57 @@
               </v-card-text>
             </v-flex>
             <v-flex xs12 sm6 md4>
-              <p>기도제목 공유</p>
-              <p>Quickly ship features with a focus on native end-user experiences. Layered architecture allows for full customization, which results in incredibly fast rendering and expressive and flexible designs.</p>
+              <v-card-text>
+                <v-avatar 
+                  color="#FFE0B2" 
+                  size="50"
+                  >
+                  <v-icon 
+                    color="#FFA726"
+                    >mdi-sprout-outline</v-icon>
+                </v-avatar>
+                <p class="headline text--primary ma-5">
+                  기도제목 공유
+                </p>
+                <p class="subheading text--primary ma-3">
+                  아주대 CCC는 사랑하는 씨맨들이 가진 여러 문제들을 놓고 
+                  우리의 중보자가 되어주시는 예수님의 이름으로 합심하여 기도합니다.  
+                  바라기는 하나님과의 지속적인 교제로 
+                  우리 씨맨들의 기도가 응답받아 우리의 삶 가운데 하나님의 살아계심이 증거되기를 소망합니다.</p>
+                <v-btn
+                  text
+                  color="deep-purple accent-4"
+                >
+                  <strong>더 알아보기</strong>
+                </v-btn>
+              </v-card-text>
             </v-flex>
             <v-flex xs12 sm6 md4>
-              <p>캠퍼스 리더십에게 건의</p>
-              <p>Flutter’s widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts, and your Flutter code is compiled to native ARM machine code using Dart's native compilers. Thus Flutter gives you full native performance on both iOS and Android.</p>
+              <v-card-text>
+                <v-avatar 
+                  color="#FFE0B2" 
+                  size="50"
+                  >
+                  <v-icon 
+                    color="#FFA726"
+                    >mdi-email-send-outline</v-icon>
+                </v-avatar>
+                <p class="headline text--primary ma-5">
+                  리더십에게 건의
+                </p>
+                <p class="subheading text--primary ma-3">
+                  아주대 CCC는 간사님과 리더십 순장님들의 노력만으로 부족합니다.
+                  모든 아주대 씨맨들이 같은 마음으로 사역하기를 원하며
+                  지속적인 피드백을 적극적으로 건의해주시기 바랍니다. 
+                  그리고 신앙적인 궁금증도 익명으로도 질문하실 수 있습니다.
+                </p>
+                <v-btn
+                  text
+                  color="deep-purple accent-4"
+                >
+                  <strong>더 알아보기</strong>
+                </v-btn>
+              </v-card-text>
             </v-flex>
           </v-layout>
         </v-card>
@@ -295,7 +397,24 @@ export default {
           href: "https://www.instagram.com/ajou_ccc/", 
         },        
       ],
+      windowSize: {
+        x: 0,
+        y: 0,
+        mobile: false
+      },
     }
   },
+  mounted () {
+    this.onResize()
+  },
+
+  methods: {
+    onResize () {
+      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+      if(window.innerWidth < 650){
+        this.windowSize.mobile = true
+      }
+    }
+  }
 }
 </script>
