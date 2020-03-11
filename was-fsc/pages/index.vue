@@ -104,10 +104,10 @@
             <v-flex xs12 sm6 md6>
               <v-card-text>
                 <v-avatar 
-                  color="#FFE0B2" 
+                  color="#FFE0B2"
                   size="50"
                   >
-                  <v-icon 
+                  <v-icon
                     color="#FFA726"
                     > mdi-bridge</v-icon>
                 </v-avatar>
@@ -115,12 +115,24 @@
                   브릿지 카드
                 </p>
                 <p class="subheading text--primary mt-3">
-                  브릿지 카드에 대한 설명dddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                  질문을 통해 서로를 알아가도록 돕는 카드입니다.
+                  처음 만난 사람과 대화를 이어가기 어려워하는
+                  요즘 세대들이 일상의 소소한 질문부터 깊은 영적인
+                  대화까지 나눌 수 있도록 만들어줍니다.
+                  각기 다른 49장의 질문카드 + 설명서 1장으로
+                  구성되어있습니다.
+                  </p>
+                <v-btn
+                  text
+                  color="green accent-4"
+                >
+                  <strong>브릿지 설명</strong>
+                </v-btn>
                 <v-btn
                   text
                   color="deep-purple accent-4"
                 >
-                  <strong>더 알아보기</strong>
+                  <strong>브릿지 시작</strong>
                 </v-btn>
               </v-card-text>
             </v-flex>
@@ -149,13 +161,23 @@
                 <p class="headline text--primary mt-3">
                   사랑의 언어
                 </p>
+                <p class="subheading text--primary ma-0 font-weight-bold">
+                  "모든 사람은 사랑받고, 사랑하기 원하는 성격를 갖고 있다.
+                  각 사람의 생김새와 성격이 다르듯 사람마다 사랑하는 방식이 다르다.
+                  사랑하는 사람과의 관계를 원만하게 하기 위해서는 '사랑의 언어'를 이해해야 한다."</p>
+                <p class="subheading text--primary font-weight-bold">
+                  (게리 채프먼 목사, 1992)</p>
                 <p class="subheading text--primary mt-3">
-                  사랑의 언어에 대한 설명asdasssssssssssssssssss</p>
+                  채프먼 박사가연구한 사랑의 언어는 총 다섯 가지로 아래와 같습니다.</p>
+                <p class="subheading text--primary mt-3">
+                  인정하는 말 / 함께하는 시간 / 스킨십 / 봉사 / 선물</p>
+                <v-divider>
+                </v-divider>
                 <v-btn
                   text
                   color="deep-purple accent-4"
                 >
-                  <strong>더 알아보기</strong>
+                  <strong>사랑의 언어 테스트 시작</strong>
                 </v-btn>
               </v-card-text>
             </v-flex>
@@ -218,6 +240,8 @@
                   <strong>더 알아보기</strong>
                 </v-btn>
               </v-card-text>
+              <v-divider>
+              </v-divider>
             </v-flex>
             <v-flex xs12 sm6 md4>
               <v-card-text>
@@ -244,6 +268,8 @@
                   <strong>더 알아보기</strong>
                 </v-btn>
               </v-card-text>
+              <v-divider>
+              </v-divider>
             </v-flex>
             <v-flex xs12 sm6 md4>
               <v-card-text>
@@ -271,6 +297,8 @@
                   <strong>더 알아보기</strong>
                 </v-btn>
               </v-card-text>
+              <v-divider>
+              </v-divider>
             </v-flex>
           </v-layout>
         </v-card>
