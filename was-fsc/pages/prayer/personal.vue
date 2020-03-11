@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-container grid-list-xl>
-      donation page
+      개인 기도제목
     </v-container>
   </v-app>
 </template>

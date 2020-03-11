@@ -62,6 +62,7 @@
                 <v-btn
                   text
                   color="deep-purple accent-4"
+                  href="https://www.youtube.com/user/soontvccc"
                 >
                   <strong>다른 영상 보기</strong>
                 </v-btn>
@@ -125,12 +126,14 @@
                 <v-btn
                   text
                   color="green accent-4"
+                  to="/bridge/description"
                 >
                   <strong>브릿지 설명</strong>
                 </v-btn>
                 <v-btn
                   text
                   color="deep-purple accent-4"
+                  to="/bridge/play"
                 >
                   <strong>브릿지 시작</strong>
                 </v-btn>
@@ -162,20 +165,25 @@
                   사랑의 언어
                 </p>
                 <p class="subheading text--primary ma-0 font-weight-bold">
-                  "모든 사람은 사랑받고, 사랑하기 원하는 성격를 갖고 있다.
+                  "모든 사람은 사랑받고, 사랑하기 원하는 마음을 갖고 있다.
                   각 사람의 생김새와 성격이 다르듯 사람마다 사랑하는 방식이 다르다.
                   사랑하는 사람과의 관계를 원만하게 하기 위해서는 '사랑의 언어'를 이해해야 한다."</p>
                 <p class="subheading text--primary font-weight-bold">
                   (게리 채프먼 목사, 1992)</p>
                 <p class="subheading text--primary mt-3">
-                  채프먼 박사가연구한 사랑의 언어는 총 다섯 가지로 아래와 같습니다.</p>
+                  채프먼 박사가 연구한 사랑의 언어는 총 다섯 가지로 아래와 같습니다.</p>
                 <p class="subheading text--primary mt-3">
-                  인정하는 말 / 함께하는 시간 / 스킨십 / 봉사 / 선물</p>
+                  <code>인정하는 말</code>/
+                  <code>함께하는 시간</code>/
+                  <code>스킨십</code>/
+                  <code>봉사(헌신)</code>/
+                  <code>선물</code></p>
                 <v-divider>
                 </v-divider>
                 <v-btn
                   text
                   color="deep-purple accent-4"
+                  to="/langOflove/test"
                 >
                   <strong>사랑의 언어 테스트 시작</strong>
                 </v-btn>
@@ -236,6 +244,7 @@
                 <v-btn
                   text
                   color="deep-purple accent-4"
+                  to="/info/ccc"
                 >
                   <strong>더 알아보기</strong>
                 </v-btn>
@@ -264,6 +273,7 @@
                 <v-btn
                   text
                   color="deep-purple accent-4"
+                  to="/prayer"
                 >
                   <strong>더 알아보기</strong>
                 </v-btn>
@@ -293,6 +303,7 @@
                 <v-btn
                   text
                   color="deep-purple accent-4"
+                  to="/request"
                 >
                   <strong>더 알아보기</strong>
                 </v-btn>
