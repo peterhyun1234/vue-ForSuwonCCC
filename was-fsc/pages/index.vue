@@ -387,7 +387,6 @@
 </template>
 
 <script>
-
 export default {
   components: {
   },
@@ -446,7 +445,6 @@ export default {
   mounted () {
     this.onResize()
   },
-
   methods: {
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
