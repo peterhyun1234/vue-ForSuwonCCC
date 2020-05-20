@@ -11,53 +11,39 @@
               v-model="panel"
               multiple
             >
-              <v-expansion-panel>
+<!-- 
+            질문에 대해 답변하면 
+            1. panel 닫기
+            2. panel icon 변경 -->
+<!-- 
+            각 질문과 그 답을 담을 Array!
+
+            결과는 Pie chart로 -->
+              <v-expansion-panel
+                v-for="(item,i) in 30"
+                :key="i"
+              >
                 <v-expansion-panel-header expand-icon="mdi-menu-down">
-                  질문 1
+                  질문 {{i+1}}
                   <template v-slot:actions>
                     <v-icon color="primary">$expand</v-icon>
                   </template>
                 </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  <v-switch v-model="accordion" class="ma-2" label="Accordion"></v-switch>
-                  <v-switch v-model="accordion" class="ma-2" label="Accordion"></v-switch>
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-              <v-expansion-panel>
-                <v-expansion-panel-header expand-icon="mdi-menu-down">
-                  질문 1
-                  <template v-slot:actions>
-                    <v-icon color="primary">$expand</v-icon>
-                  </template>
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  <v-switch v-model="accordion" class="ma-2" label="Accordion"></v-switch>
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-              <v-expansion-panel>
-                <v-expansion-panel-header expand-icon="mdi-menu-down">
-                  질문 1
-                  <template v-slot:actions>
-                    <v-icon color="primary">$expand</v-icon>
-                  </template>
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  <v-switch v-model="accordion" class="ma-2" label="Accordion"></v-switch>
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-              <v-expansion-panel>
-                <v-expansion-panel-header expand-icon="mdi-menu-down">
-                  질문 1
-                  <template v-slot:actions>
-                    <v-icon color="primary">$expand</v-icon>
-                  </template>
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  <v-switch v-model="accordion" class="ma-2" label="Accordion"></v-switch>
+                <v-divider></v-divider>
+                <v-expansion-panel-content
+                  class= "mt-5">
+                  <v-radio-group v-model="radios">
+                    <v-radio value="Google">
+                      <template v-slot:label>
+                        <div>Of course it's <strong class="success--text">Google</strong></div>
+                      </template>
+                    </v-radio>
+                    <v-radio value="Duckduckgo">
+                      <template v-slot:label>
+                        <div>Definitely <strong class="primary--text">Duckduckgo</strong></div>
+                      </template>
+                    </v-radio>
+                  </v-radio-group>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -139,15 +125,31 @@
 
 <script>
 
+const degreeOfQ = 30;
+
 export default {
   components: {
   },
   data () {
     return {
-      accordion: false,
-      panel: [0, 1, 2],
+      panel: [],
+      radios: 'Duckduckgo'
     }
   },
+
+
+  mounted() {
+    this.init();
+  },
+  methods: {
+    init () {
+      for(let i = 0; i < degreeOfQ; i++){
+        this.panel.push(i);
+      }
+      console.log(this.panel);
+    },
+  }
 }
+
 </script>
 
