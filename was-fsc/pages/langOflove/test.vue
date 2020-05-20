@@ -14,7 +14,9 @@
 <!-- 
             질문에 대해 답변하면 
             1. panel 닫기
-            2. panel icon 변경 -->
+            2. panel icon 변경
+            3. 선택한 option에 하이라이트!
+            4. 답변한 질문은 초록색 배경으로 바꿔주는 것도 괜찮을 듯 -->
 <!-- 
             각 질문과 그 답을 담을 Array!
 
@@ -32,15 +34,16 @@
                 <v-divider></v-divider>
                 <v-expansion-panel-content
                   class= "mt-5">
-                  <v-radio-group v-model="radios">
-                    <v-radio value="Google">
+                  <v-radio-group v-model="questions[i]">
+                    {{questions[i]}}
+                    <v-radio value="opt1">
                       <template v-slot:label>
-                        <div>Of course it's <strong class="success--text">Google</strong></div>
+                        <div>{{questions[i].option1}}</div>
                       </template>
                     </v-radio>
-                    <v-radio value="Duckduckgo">
+                    <v-radio value="opt2">
                       <template v-slot:label>
-                        <div>Definitely <strong class="primary--text">Duckduckgo</strong></div>
+                        <div>{{questions[i].option2}}</div>
                       </template>
                     </v-radio>
                   </v-radio-group>
@@ -133,7 +136,24 @@ export default {
   data () {
     return {
       panel: [],
-      radios: 'Duckduckgo'
+      radios: ['','',''], 
+      questions: [
+        {
+          option1: "나는 나를 인정하는 내용의 쪽지 받기를 좋아한다.", 
+          option2: "나는 안기는 것이 좋다.", 
+          choice: "", 
+        },   
+        {
+          option1: "특별한 사람과 일대일로 시간을 보내는 게 좋다.", 
+          option2: "누군가 내게 실제적인 도움을 줄 때 사랑 받는다고 느낀다.", 
+          choice: "", 
+        },   
+        {
+          option1: "사람들로부터 선물을 받는 게 좋다.", 
+          option2: "친구들과 사랑하는 사람들을 만나 여유 있게 시간을 보내는 게 좋다.", 
+          choice: "", 
+        },     
+      ],
     }
   },
 
@@ -143,10 +163,10 @@ export default {
   },
   methods: {
     init () {
-      for(let i = 0; i < degreeOfQ; i++){
+      for(let i = 0; i < 3; i++){
         this.panel.push(i);
       }
-      console.log(this.panel);
+      //console.log(this.panel);
     },
   }
 }
