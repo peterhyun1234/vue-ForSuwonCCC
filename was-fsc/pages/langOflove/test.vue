@@ -25,12 +25,18 @@
                 v-for="(item,i) in 30"
                 :key="i"
               >
-                <v-expansion-panel-header expand-icon="mdi-menu-down">
+                <v-expansion-panel-header expand-icon="mdi-menu-down" disable-icon-rotate>
                   질문 {{i+1}} /{{QDegree}}
-                  <template v-slot:actions>
-                    <v-icon color="primary">$expand</v-icon>
+                  <template 
+                    v-slot:actions
+                    v-if="radios[i]"
+                  >
+                    <v-icon color="teal">mdi-check</v-icon>
                   </template>
-                  <template v-slot:actions>
+                  <template 
+                    v-slot:actions
+                    v-else
+                  >
                     <v-icon color="error">mdi-alert-circle</v-icon>
                   </template>
                 </v-expansion-panel-header>
@@ -61,22 +67,115 @@
           class="my-2"
           style="text-align: center;"
         >
-          <v-btn 
-            :class="[computedMargin]"
-            class="subtitle-1 font-weight-bold" 
-            color="warning" 
-            large >
-            <v-icon large>mdi-cached</v-icon> 
-            응답 초기화
-          </v-btn>
+        <v-dialog v-model="dialog" persistent max-width="290">
+          <template v-slot:activator="{ on }">
+            <v-btn 
+              :class="[computedMargin]"
+              class="subtitle-1 font-weight-bold" 
+              color="warning" 
+              large 
+              v-on="on">
+              <v-icon large>mdi-cached</v-icon> 
+              응답 초기화
+            </v-btn>
+          </template>
+          <v-card>
+            <v-card-title class="headline">응답 초기화</v-card-title>
+            <v-card-text>동의하시면 지금까지 열심히 작성한 질문들에 대한 답변이 초기화 됩니다. 초기화 하시겠습니까?</v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="blue darken-1" text @click="dialog = false" class="subtitle-1 font-weight-bold" >아니오</v-btn>
+              <v-btn color="pink darken-1" text @click="dialog = false; refresh()" class="subtitle-1 font-weight-bold" >초기화</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
           <v-btn 
             :class="[computedMargin]"
             class="subtitle-1 font-weight-bold white--text" 
-            color="green" 
-            large >
+            color="green"             
+            @click="carculateResult()">
             <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
             결과 확인!
           </v-btn>
+
+<!-- <v-dialog v-model="dialog" persistent max-width="290">
+        <template v-slot:activator="{ on }">
+          <v-btn color="primary" dark v-on="on">Open Dialog</v-btn>
+        </template>
+        <v-card>
+          <v-card-title class="headline">Use Google's location service?</v-card-title>
+          <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="green darken-1" text @click="dialog = false">Disagree</v-btn>
+            <v-btn color="green darken-1" text @click="dialog = false">Agree</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+
+                <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+        <template v-slot:activator="{ on }">
+          <v-btn color="primary" dark v-on="on">Open Dialog</v-btn>
+        </template>
+        <v-card>
+          <v-toolbar dark color="primary">
+            <v-btn icon dark @click="dialog = false">
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+            <v-toolbar-title>Settings</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
+              <v-btn dark text @click="dialog = false">Save</v-btn>
+            </v-toolbar-items>
+          </v-toolbar>
+          <v-list three-line subheader>
+            <v-subheader>User Controls</v-subheader>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Content filtering</v-list-item-title>
+                <v-list-item-subtitle>Set the content filtering level to restrict apps that can be downloaded</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Password</v-list-item-title>
+                <v-list-item-subtitle>Require password for purchase or use password to restrict purchase</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+          <v-divider></v-divider>
+          <v-list three-line subheader>
+            <v-subheader>General</v-subheader>
+            <v-list-item>
+              <v-list-item-action>
+                <v-checkbox v-model="notifications"></v-checkbox>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>Notifications</v-list-item-title>
+                <v-list-item-subtitle>Notify me about updates to apps or games that I downloaded</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-action>
+                <v-checkbox v-model="sound"></v-checkbox>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>Sound</v-list-item-title>
+                <v-list-item-subtitle>Auto-update apps at any time. Data charges may apply</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-action>
+                <v-checkbox v-model="widgets"></v-checkbox>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>Auto-add widgets</v-list-item-title>
+                <v-list-item-subtitle>Automatically add home screen widgets</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-card>
+      </v-dialog> -->
         </v-col>
       </v-row>
     </v-container>
@@ -94,6 +193,7 @@ export default {
   data () {
     return {
       QDegree: degreeOfQ,
+      dialog: false,
       panel: [],
       radios: [], 
       questions: [
@@ -316,6 +416,13 @@ export default {
         this.windowSize.mobile = true
       }
     },
+    refresh(){
+      this.radios = [];
+    },
+    carculateResult(){
+      // 하나라도 check 안한 항목이 있는지
+    },
+
   }
 }
 
