@@ -15,6 +15,7 @@
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@syncfusion/ej2-charts": "^18.1.53",
     "nuxt": "^2.11.0",
     "nuxt-fontawesome": "^0.4.0"
   },
