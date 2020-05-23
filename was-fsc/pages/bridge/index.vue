@@ -3,7 +3,7 @@
     <v-container grid-list-xl>
         <ejs-accumulationchart id="container">
             <e-accumulation-series-collection>
-                <e-accumulation-series :dataSource='seriesData' xName='x' yName='y' :dataLabel='datalabel'  :pointColorMapping=' pointColorMapping'> </e-accumulation-series>
+                <e-accumulation-series :dataSource='seriesData' xName='x' yName='y' :border='border'  :dataLabel='datalabel' :pointColorMapping=' pointColorMapping'> </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
     </v-container>
@@ -20,11 +20,16 @@ export default {
   data() {
     return {
       seriesData: [
-                { x: 'Jan', y: 3, fill: '#498fff', text:'January' }, { x: 'Feb', y: 3.5, fill: '#ffa060', text: 'February' },
-                { x: 'Mar', y: 7, fill: '#ff68b6', text: 'March' }, { x: 'Apr', y: 13.5, fill: '#81e2a1', text: 'April' }
+                { x: 'Apr', y: 13.5, fill: '#81e2a1', text: 'April' }, 
+                { x: 'Jan', y: 3, fill: '#498fff', text:'January' }, 
+                { x: 'Feb', y: 3.5, fill: '#ffa060', text: 'February' },
+                { x: 'Mar', y: 7, fill: '#ff68b6', text: 'March' }, 
             ],
-            datalabel: { visible: true, name: 'text' },
-            pointColorMapping: 'fill'
+            border: {color: 'white', width: 2},
+            datalabel: {
+              visible: true, 
+              name: 'text', },
+            pointColorMapping: 'fill',
         };
   },
   provide: {
