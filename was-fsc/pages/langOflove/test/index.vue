@@ -94,7 +94,7 @@
             :class="[computedMargin]"
             class="subtitle-1 font-weight-bold white--text" 
             color="green"
-            @click="carculateResult()"
+            @click="showResult()"
             large >
             <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
             결과 확인!
