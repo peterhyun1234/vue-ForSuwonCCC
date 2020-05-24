@@ -94,7 +94,7 @@
             :class="[computedMargin]"
             class="subtitle-1 font-weight-bold white--text" 
             color="green"
-            @click="carculateResult()"
+            @click="showResult()"
             large >
             <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
             결과 확인!
@@ -341,13 +341,27 @@ export default {
     refresh(){
       this.radios = [];
     },
-    carculateResult(){
+    showResult(){
       // 하나라도 check 안한 항목이 있는지
-      console.log("carculateResult");
+      if(this.checkResult()){
+        this.carculateResult();
 
+        // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
+        this.$router.push('./test/result')
+      }
+    },
+    checkResult(){
+      if(this.radios.length === this.panel.length){
+        //alert("full!");
+        return true;
+      }else{
+        alert("체크하지 않은 항목이 있습니다!");
+        return false;
+      }
+    },
+    carculateResult(){
+      console.log()
 
-      // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
-      this.$router.push('./test/result')
     },
 
   }
