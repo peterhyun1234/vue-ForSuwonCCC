@@ -7,8 +7,7 @@
                 <e-accumulation-series 
                 :dataSource='seriesData' 
                 xName='x' yName='y' 
-                :border='border'  
-                :dataLabel='datalabel'
+                :border='border'
                 :pointColorMapping=' pointColorMapping'> </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
@@ -31,10 +30,10 @@ export default {
         shapeHeight: 25, shapeWidth: 25,
       },
       seriesData: [
-          { x: 'Apr', y: 13.5, fill: '#81e2a1', text: 'April' }, 
-          { x: 'Jan', y: 3, fill: '#498fff', text:'January' }, 
-          { x: 'Feb', y: 3.5, fill: '#ffa060', text: 'February' },
-          { x: 'Mar', y: 7, fill: '#ff68b6', text: 'March' }, 
+          { x: 'Apr', y: 1, fill: '#81e2a1', text: 'April' }, 
+          { x: 'Jan', y: 1, fill: '#498fff', text:'January' }, 
+          { x: 'Feb', y: 1, fill: '#ffa060', text: 'February' },
+          { x: 'Mar', y: 1, fill: '#ff68b6', text: 'March' }, 
       ],
       border: {color: 'white', width: 2},
       tooltip:{
@@ -46,6 +45,17 @@ export default {
   },
   provide: {
      accumulationchart: [PieSeries, AccumulationDataLabel, AccumulationLegend, AccumulationTooltip]
+  },
+
+  mounted() {
+    this.init();
+  },
+
+  methods: {
+    init () {
+      console.log("init func");     
+    },
+
   }
 };
 </script>
