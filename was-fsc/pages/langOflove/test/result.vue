@@ -53,6 +53,7 @@ export default {
 
   methods: {
     init () {
+      
       console.log("init func");     
     },
 

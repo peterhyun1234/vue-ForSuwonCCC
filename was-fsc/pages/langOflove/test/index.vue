@@ -381,11 +381,12 @@ export default {
           this.result[this.questions[i].option2_prop]++;
         }
       }
-      //console.log(this.result);
-
+      
+      // using localstorage
+      localStorage.setItem("storedToDo", JSON.stringify(toDoArray));
 
       // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
-      //this.$router.push('./test/result')
+      this.$router.push('./test/result')
 
     },
 
