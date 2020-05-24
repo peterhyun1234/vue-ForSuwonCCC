@@ -94,7 +94,7 @@
             :class="[computedMargin]"
             class="subtitle-1 font-weight-bold white--text" 
             color="green"
-            @click="showResult()"
+            @click="carculateResult()"
             large >
             <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
             결과 확인!
@@ -116,9 +116,16 @@ export default {
     return {
       QDegree: degreeOfQ,
       refreshDialog: false,
-      resultDialog: false,
       panel: [],
       radios: [], 
+      result: {
+        A: 0,
+        B: 0,
+        C: 0,
+        D: 0,
+        E: 0,
+      },
+
       questions: [
         {
           option1: "나는 나를 인정하는 내용의 문자나 카톡을 받는 것을 좋아한다.", 
@@ -345,9 +352,6 @@ export default {
       // 하나라도 check 안한 항목이 있는지
       if(this.checkResult()){
         this.carculateResult();
-
-        // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
-        this.$router.push('./test/result')
       }
     },
     checkResult(){
@@ -360,7 +364,28 @@ export default {
       }
     },
     carculateResult(){
-      console.log()
+
+      // initialize result for exact checking
+      this.result["A"] = 0;
+      this.result["B"] = 0;
+      this.result["C"] = 0;
+      this.result["D"] = 0;
+      this.result["E"] = 0;
+
+      //console.log(this.radios);
+
+      for(let i = 0; i < this.radios.length; i++){
+        if(this.radios[i] === "opt1"){
+          this.result[this.questions[i].option1_prop]++;
+        }else{
+          this.result[this.questions[i].option2_prop]++;
+        }
+      }
+      //console.log(this.result);
+
+
+      // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
+      //this.$router.push('./test/result')
 
     },
 
