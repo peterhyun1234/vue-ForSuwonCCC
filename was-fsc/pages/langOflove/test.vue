@@ -90,13 +90,19 @@
             </v-card>
           </v-dialog>
 
-          <v-dialog v-model="resultDialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+          <v-dialog 
+            v-model="resultDialog" 
+            fullscreen 
+            hide-overlay 
+            transition="dialog-bottom-transition"
+          >
             <template v-slot:activator="{ on }">
               <v-btn 
                 :class="[computedMargin]"
                 class="subtitle-1 font-weight-bold white--text" 
                 color="green"             
                 @click="carculateResult()"
+                large
                 v-on="on">
                 <v-icon large>mdi-arrow-right-circle-outline</v-icon> 
                 결과 확인!
@@ -113,16 +119,21 @@
                   <v-btn dark text @click="resultDialog = false">Save</v-btn>
                 </v-toolbar-items>
               </v-toolbar>
-              <ejs-accumulationchart id="container" :legendSettings='legendSettings' :tooltip='tooltip'>
-                  <e-accumulation-series-collection>
-                      <e-accumulation-series 
-                      :dataSource='seriesData' 
-                      xName='x' yName='y' 
-                      :border='border'  
-                      :dataLabel='datalabel'
-                      :pointColorMapping=' pointColorMapping'> </e-accumulation-series>
-                  </e-accumulation-series-collection>
-              </ejs-accumulationchart>
+              <v-card>
+                <div>
+                  <ejs-accumulationchart :legendSettings='legendSettings' :tooltip='tooltip'>
+                      <e-accumulation-series-collection>
+                          <e-accumulation-series
+                           id="pieChartcontainer" 
+                          :dataSource='seriesData' 
+                          xName='x' yName='y' 
+                          :border='border'  
+                          :dataLabel='datalabel'
+                          :pointColorMapping=' pointColorMapping'> </e-accumulation-series>
+                      </e-accumulation-series-collection>
+                  </ejs-accumulationchart>
+                </div>
+              </v-card>
               <v-divider></v-divider>
               <v-list three-line subheader>
                 <v-subheader>General</v-subheader>
@@ -436,3 +447,9 @@ export default {
 
 </script>
 
+<style>
+#pieChartcontainer {
+  background-color: blue;
+  max-width: 360px;
+}
+</style>
