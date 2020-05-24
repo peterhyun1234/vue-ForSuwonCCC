@@ -30,10 +30,11 @@ export default {
         shapeHeight: 25, shapeWidth: 25,
       },
       seriesData: [
-          { x: 'Apr', y: 1, fill: '#81e2a1', text: 'April' }, 
-          { x: 'Jan', y: 1, fill: '#498fff', text:'January' }, 
-          { x: 'Feb', y: 1, fill: '#ffa060', text: 'February' },
-          { x: 'Mar', y: 1, fill: '#ff68b6', text: 'March' }, 
+          { x: '인정하는 말', y: 1, fill: '#f8ff69', text: 'A' }, 
+          { x: '함께하는 시간', y: 1, fill: '#498fff', text: 'B' }, 
+          { x: '선물', y: 1, fill: '#ffa060', text: 'C' },
+          { x: '봉사(헌신)', y: 1, fill: '#69ffb1', text: 'D' }, 
+          { x: '스킨쉽', y: 1, fill: '#ff68b6', text: 'E' }, 
       ],
       border: {color: 'white', width: 2},
       tooltip:{
@@ -47,14 +48,29 @@ export default {
      accumulationchart: [PieSeries, AccumulationDataLabel, AccumulationLegend, AccumulationTooltip]
   },
 
-  mounted() {
+  created() {
     this.init();
   },
 
   methods: {
     init () {
-      
-      console.log("init func");     
+      // get data from localstorage
+      const result = localStorage.getItem("result");
+      const parsedResult = JSON.parse(result);
+      //console.log(parsedResult);
+
+      this.seriesData[0].y = parsedResult.A;
+      this.seriesData[1].y = parsedResult.B;
+      this.seriesData[2].y = parsedResult.C;
+      this.seriesData[3].y = parsedResult.D;
+      this.seriesData[4].y = parsedResult.E;
+
+      // sorting based on y value
+      this.seriesData.sort(function(a, b){
+        return b.y - a.y;
+      })
+
+      console.log(this.seriesData)
     },
 
   }

@@ -383,11 +383,10 @@ export default {
       }
       
       // using localstorage
-      localStorage.setItem("storedToDo", JSON.stringify(toDoArray));
+      localStorage.setItem("result", JSON.stringify(this.result));
 
       // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
-      this.$router.push('./test/result')
-
+      this.$router.push('./test/result');
     },
 
   }
