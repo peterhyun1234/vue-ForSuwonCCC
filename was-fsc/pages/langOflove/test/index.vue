@@ -344,7 +344,10 @@ export default {
     carculateResult(){
       // 하나라도 check 안한 항목이 있는지
       console.log("carculateResult");
-      this.router.go('./test/result')
+
+
+      // 참고: https://stackoverflow.com/questions/35664550/vue-js-redirection-to-another-page
+      this.$router.push('./test/result')
     },
 
   }
