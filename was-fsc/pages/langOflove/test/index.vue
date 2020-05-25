@@ -5,22 +5,50 @@
     <v-container>
       <v-row>
         <v-col>
+          <v-card
+            class="mt-5 mb-10"
+            shaped
+            >
+            <v-layout 
+              row
+              align-center 
+              justify-center
+            >
+              <v-flex xs12 sm6 md6>
+                <v-card-text>
+                  <v-avatar 
+                    color="#FFE0B2" 
+                    size="50"
+                    >
+                    <v-icon 
+                      color="#FFA726"
+                      > mdi-account-heart-outline</v-icon>
+                  </v-avatar>
+                  <p class="headline text--primary mt-3">
+                    사랑의 언어
+                  </p>
+                  <p class="subtitle-1 text--primary ma-0 ">
+                    관계 전문가 게리 채프먼 박사에 의하면 사람마다
+                    <strong>'사랑받는다'고 느끼는 순간</strong>이 다 다릅니다.</p>
+                  <p class="subtitle-1 text--primary mt-3 ">
+                    이를 <strong>사랑의 언어</strong>라고 표현하는데요. 
+                    채프먼 박사는 상대방의 언어로 표현해야 비로소 사랑이 전달된다고 말합니다.</p>
+                  <v-divider></v-divider>
+                  <p class="title text--primary mt-3 ">
+                    <strong>이제부터 사랑의 언어를 알아보는 테스트를 해봅시다!</strong></p>
+                  <p class="subtitle-1 text--primary mt-3 ">
+                    박스 안의 두 문항 중 자신이 <strong>더 바라는 쪽</strong>을 선택하고 결과를 확인해보세요!</p>
+                </v-card-text>
+              </v-flex>
+            </v-layout>
+          </v-card>
+          
           <v-card>
             <v-expansion-panels 
               class="mb-6"
               v-model="panel"
               multiple
             >
-<!-- 
-            질문에 대해 답변하면 
-            1. panel 닫기
-            2. panel icon 변경
-            3. 선택한 option에 하이라이트!
-            4. 답변한 질문은 초록색 배경으로 바꿔주는 것도 괜찮을 듯 -->
-<!-- 
-            각 질문과 그 답을 담을 Array!
-
-            결과는 Pie chart로 -->
               <v-expansion-panel
                 v-for="(item,i) in 30"
                 :key="i"
