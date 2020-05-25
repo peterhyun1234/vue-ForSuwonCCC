@@ -6,7 +6,7 @@
       <v-row>
         <v-col>
           <v-card
-            class="mt-5 mb-10"
+            class="mt-5 mb-10 pa-3"
             shaped
             >
             <v-layout 
