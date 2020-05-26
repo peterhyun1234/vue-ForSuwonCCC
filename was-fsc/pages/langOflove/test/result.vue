@@ -5,7 +5,7 @@
           <e-accumulation-series-collection>
               <e-accumulation-series 
               :dataSource='seriesData' 
-              xName='x' yName='y' 
+              xName='x' yName='y'
               :radius='radius'
               :border='border'
               :dataLabel='datalabel'
@@ -27,8 +27,8 @@
             </v-avatar>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>사랑의 언어 1: {{ seriesData[0].x }}</v-list-item-title>
-            <v-list-item-subtitle>{{ seriesData[0].description }}</v-list-item-subtitle>
+            <v-list-item-title class="mt-3">사랑의 언어 1: {{ seriesData[0].x }}</v-list-item-title>
+            <v-list-item-action-text class="subtitle-2 mt-3">{{ seriesData[0].simpleDescription }}</v-list-item-action-text>
             <v-expansion-panels
               flat Popout>
               <v-expansion-panel>
@@ -39,7 +39,7 @@
                   </template>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  {{seriesData[0].description }}
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -58,19 +58,19 @@
             </v-avatar>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>사랑의 언어 2: {{ seriesData[1].x }}</v-list-item-title>
-            <v-list-item-subtitle>{{ seriesData[1].description }}</v-list-item-subtitle>
+            <v-list-item-title class="mt-3">사랑의 언어 2: {{ seriesData[1].x }}</v-list-item-title>
+            <v-list-item-action-text class="subtitle-2 mt-3">{{ seriesData[1].simpleDescription }}</v-list-item-action-text>
             <v-expansion-panels
               flat>
               <v-expansion-panel>
-                <v-expansion-panel-header>
-                  더 자세히 보기
+                <v-expansion-panel-header class="body-1 text--secondary">
+                  더 보기
                   <template v-slot:actions>
                     <v-icon color="primary">$expand</v-icon>
                   </template>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  {{seriesData[1].description }}
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -99,22 +99,27 @@ export default {
           { x: '인정하는 말', y: 1, fill: '#81C784', text: 'A', r: '120', 
             percentage: "",
             icon: 'mdi-podcast', 
-            description: "사랑을 표현하는 방법이 격려의 말, 인정해 주는 말입니다. 칭찬하는 말이나 감사의 표현, 그 사람을 인정하고 높혀주는 말들이 이 사람에겐 행복이고, 큰 힘을 줍니다. 또한 이 사람은 사랑의 감정을 말로 전달하고 싶어하며 온화한 말투를 좋아하고, 명령하는 말투를 극히 싫어합니다. \"미안해 , 고마워, 정말 잘하는구나, 사랑해, 넌 정말 좋은 사람이야\" 와 같은 사과, 칭찬, 격려, 애정의 말들을 배우자, 또는 주변사람들로 부터 들었을때 \"내가 사랑받고 있구나\" 라고 느끼며 매사에 최선을 다하게 됩니다."}, 
+            simpleDescription: "인정하는 말이 주언어인 사람은 사랑을 표현하는 방법이 격려의 말, 인정해 주는 말입니다.", 
+            description: "칭찬하는 말이나 감사의 표현, 그 사람을 인정하고 높혀주는 말들이 이 사람에겐 행복이고, 큰 힘을 줍니다. 또한 이 사람은 사랑의 감정을 말로 전달하고 싶어하며 온화한 말투를 좋아하고, 명령하는 말투를 극히 싫어합니다. \"미안해 , 고마워, 정말 잘하는구나, 사랑해, 넌 정말 좋은 사람이야\" 와 같은 사과, 칭찬, 격려, 애정의 말들을 배우자, 또는 주변사람들로 부터 들었을때 \"내가 사랑받고 있구나\" 라고 느끼며 매사에 최선을 다하게 됩니다."}, 
           { x: '함께하는 시간', y: 1, fill: '#AED581', text: 'B', r: '120', 
             percentage: "",
             icon: 'mdi-human-male-female', 
-            description: "함께 하는 시간이란 누군가에게 온전히 관심을 집중시키는 것을 의미합니다. TV를 끄고 소파에 마주 앉아 대화를 하면서 서로에게 관심을 집중하는 것과 같습니다. 산책을 하며 외식을 할 때도 서로 마주 보며 대화를 하는 것이 중요합니다." }, 
+            simpleDescription: "함께하는 시간이 주언어인 사람들은 누군가가 자신에게 온전히 관심을 집중시키고 있을때 사랑을 느낍니다.", 
+            description: "단순히 상대방과 함께있는걸 좋아하는 것이 아니라, 함께하는 활동 속에서 상대방이 온전히 나에게 집중하고, 관심을 기울여 주기를 원합니다. 함께 외식을 하거나 영화구경을 하면서 서로의 관심 을 나누고, 그 사람의 눈을 마주보며 이야기를 경청해준다면 그 사람을 분명 당신의 사랑을 느낄 수 있을것입니다."}, 
           { x: '선물', y: 1, fill: '#DCE775', text: 'C', r: '120', 
             icon: 'mdi-gift-outline', 
-            description: "선물은 상징일 수 있지만 선물을 준 사람과 그 때의 느낌은 오래오래 기억됩니다. 마음이 중요하다고 생각하여 선물하지 않으면 나중에는 마음까지 멀어질 수 있습니다. 지금 생각나는 소중한 사람들에게 선물을 전달해보세요!" },
+            simpleDescription: "선물이 주언어인 선물이 사람들은 선물이 사랑을 표현하는 수단이라 생각하며 사랑을 나타내는 상징이라 믿습니다.", 
+            description: "어떤 사람들은 아름다운 보석이나, 값비싼 물건을 선물해야만 사랑이 전달된다고 믿습니다. 하지만 이 사람들에겐 아주 작은 선물이라도 사랑이 전달되기엔 충분합니다. 주는 사람의 마음만 듬뿍 담겨 있다면 선물의 크고 작음에는 전혀 관계가 없습니다. 당신이 전하는 사랑이 듬뿍 담긴 작은 쪽지 하나라도 이 사람들에겐 평생 간직해고픈 큰 선물일 것입니다." },
           { x: '봉사의 손길', y: 1, fill: '#FFF176', text: 'D', r: '120', 
             percentage: "",
             icon: 'mdi-hand-heart', 
-            description: "상대를 도와줌으로써 기쁘게 하고 무엇인가를 함으로써 당신의 사랑을 표현하는 것을 말합니다. " }, 
+            simpleDescription: "봉사의 손길을 주언어로 가진 사람들은 상대방이 자신을 도와줄때 행복을 느낍니다.", 
+            description: "누군가 자신을 위해 무언가를 해줄때 그 속에서 사랑을 느낍니다. 자신의 입으로 원하는 것을 말하기 전에 나를 위해 계획을 세우고 시간을 내서 노력해주길 원합니다. 설겆이, 청소 도와주기, 무거운 물건 대신 들어주기, 등등 누군가 자신을 위해 봉사의 손길을 내민다면 이 사람을 분명히 사랑을 느낄 것입니다." }, 
           { x: '스킨쉽', y: 1, fill: '#FFB74D', text: 'E', r: '120', 
             percentage: "",
             icon: 'mdi-heart-box-outline', 
-            description: "육체적인 접촉을 전혀 갖지 않고 지낸 아이들보다 안아주거나 키스를 해 준 아이들이 훨씬 건강하게 자란다고 합니다." }, 
+            simpleDescription: "스킨쉽이 주언어인 사람들은 말그대로 상대방과의 신체접촉을 통해서 행복을 느낍니다.", 
+            description: "이 사람들은 힘들때 누군가 손을 잡아 주거나 어깨를 한번 두드려주는 것만으로도 아주 큰 힘이 얻습니다. 상대방이 손으로 머리를 쓰다듬고 사랑을 듬뽁담아 안아준다면 \"난 혼자가 아니야\", \"행복하다\"란 사랑의 감정을 느끼게 될 것입니다." }, 
       ],
       radius: 'r',
       border: {color: 'white', width: 3},
