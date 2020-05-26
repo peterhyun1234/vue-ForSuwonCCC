@@ -12,9 +12,9 @@
               :pointColorMapping=' pointColorMapping'> </e-accumulation-series>
           </e-accumulation-series-collection>
       </ejs-accumulationchart>
-      <v-list three-line subheader>
+      <v-list class="mb-5" three-line subheader>
         <v-subheader>사랑의 언어 테스트 결과</v-subheader>
-        <v-list-item >
+        <v-list-item class="mb-5">
           <v-list-item-action>
             <v-avatar 
               color="#F5F5F5" 
@@ -38,12 +38,12 @@
                   <v-card 
                     class="pt-1 pb-1"
                     style="text-align: center;" 
-                    max-width="200" 
+                    max-width="220" 
                     :color="seriesData[0].fill">
                     <v-card
                       class="ml-6 mr-6"
                       style="opacity: 0.7"
-                      max-width="150"
+                      max-width="170"
                       outlined
                       color="white">
                       {{ seriesData[0].x }}
@@ -72,7 +72,7 @@
             </v-card-actions>
           </v-card> 
         </v-list-item>
-        <v-list-item >
+        <v-list-item class="mb-5">
           <v-list-item-action>
             <v-avatar 
               color="#F5F5F5" 
@@ -96,12 +96,12 @@
                   <v-card 
                     class="pt-1 pb-1"
                     style="text-align: center;" 
-                    max-width="200" 
+                    max-width="220" 
                     :color="seriesData[1].fill">
                     <v-card
                       class="ml-6 mr-6"
                       style="opacity: 0.7"
-                      max-width="150"
+                      max-width="170"
                       outlined
                       color="white">
                       {{ seriesData[1].x }}
@@ -129,39 +129,6 @@
               </v-expansion-panels>
             </v-card-actions>
           </v-card> 
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action>
-            <v-avatar 
-              color="#F5F5F5" 
-              size="50"
-              >
-              <v-icon 
-                :color="seriesData[1].fill"
-                > {{ seriesData[1].icon }}</v-icon>
-            </v-avatar>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="mt-3">
-              <span>사랑의 언어 2: </span>
-              <span class="title">{{ seriesData[1].x }}</span>
-            </v-list-item-title>
-            <v-list-item-action-text class="subtitle-2 mt-3">{{ seriesData[1].simpleDescription }}</v-list-item-action-text>
-            <v-expansion-panels
-              flat>
-              <v-expansion-panel>
-                <v-expansion-panel-header class="body-1 text--secondary">
-                  더 보기
-                  <template v-slot:actions>
-                    <v-icon color="primary">$expand</v-icon>
-                  </template>
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  {{seriesData[1].description }}
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-            </v-expansion-panels>
-          </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-container>
