@@ -383,11 +383,20 @@ export default {
       }
     },
     checkResult(){
-      if(this.radios.length === this.panel.length){
-        //alert("full!");
+
+      let uncheckedRadios = [];
+
+      for(let i = 0; i < this.panel.length; i++){
+        if(!this.radios[i]){
+          uncheckedRadios.push(i+1);
+        }
+      }
+
+
+      if(uncheckedRadios.length === 0){
         return true;
       }else{
-        alert("체크하지 않은 항목이 있습니다!");
+        alert("체크하지 않은 항목이 있습니다!\n:" + uncheckedRadios);
         return false;
       }
     },
