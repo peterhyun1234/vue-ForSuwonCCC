@@ -15,7 +15,7 @@
       <v-list three-line subheader>
         <v-subheader>사랑의 언어 테스트 결과</v-subheader>
         <v-divider></v-divider>
-        <v-list-item>
+        <v-list-item >
           <v-list-item-action>
             <v-avatar 
               color="#F5F5F5" 
@@ -26,8 +26,51 @@
                 > {{ seriesData[0].icon }}</v-icon>
             </v-avatar>
           </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="mt-3">사랑의 언어 1: {{ seriesData[0].x }}</v-list-item-title>
+
+  <v-card
+    class="mx-auto"
+    max-width="344"
+    outlined
+  >
+    <v-list-item three-line>
+      <v-list-item-content>
+        <div class="overline mb-4">사랑의 언어 1: </div>
+        <v-list-item-title class="headline mb-3">{{ seriesData[0].x }}</v-list-item-title>
+        <v-list-item-subtitle>{{ seriesData[0].simpleDescription }}</v-list-item-subtitle>
+      </v-list-item-content>
+
+      <v-list-item-avatar
+        tile
+        size="80"
+        color="grey"
+      ></v-list-item-avatar>
+    </v-list-item>
+
+    <v-card-actions>
+        <v-expansion-panels
+          flat Popout>
+          <v-expansion-panel>
+            <v-expansion-panel-header class="body-1 text--secondary">
+              더 보기
+              <template v-slot:actions>
+                <v-icon color="primary">$expand</v-icon>
+              </template>
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              {{seriesData[0].description }}
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
+      </v-card-actions>
+  </v-card>
+
+
+
+          <!-- <v-list-item-content>
+            <v-list-item-title class="mt-3" >
+              <span>사랑의 언어 1: </span>
+              <span class="title">{{ seriesData[0].x }}</span>
+            </v-list-item-title>
             <v-list-item-action-text class="subtitle-2 mt-3">{{ seriesData[0].simpleDescription }}</v-list-item-action-text>
             <v-expansion-panels
               flat Popout>
@@ -43,7 +86,7 @@
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
-          </v-list-item-content>
+          </v-list-item-content> -->
         </v-list-item>
         <v-divider></v-divider>
         <v-list-item>
@@ -58,7 +101,10 @@
             </v-avatar>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class="mt-3">사랑의 언어 2: {{ seriesData[1].x }}</v-list-item-title>
+            <v-list-item-title class="mt-3">
+              <span>사랑의 언어 2: </span>
+              <span class="title">{{ seriesData[1].x }}</span>
+            </v-list-item-title>
             <v-list-item-action-text class="subtitle-2 mt-3">{{ seriesData[1].simpleDescription }}</v-list-item-action-text>
             <v-expansion-panels
               flat>
