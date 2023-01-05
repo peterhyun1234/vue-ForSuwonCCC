@@ -17,7 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@syncfusion/ej2-charts": "^18.1.53",
     "@syncfusion/ej2-vue-charts": "^18.1.53",
-    "nuxt": "^2.11.0",
+    "nuxt": "^2.15.8",
     "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
